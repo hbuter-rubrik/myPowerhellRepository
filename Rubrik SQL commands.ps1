@@ -18,7 +18,11 @@
     New-RubrikDatabaseMount -id $db.id -targetInstanceId $db.instanceId -mountedDatabaseName 'SQL_LM' -recoveryDateTime (Get-date (Get-RubrikDatabase -id $db.id).latestRecoveryPoint)
 
 
+# list SQL databases in cluster
+    Get-RubrikDatabase |select name,state,instancename,recoverymodel
 
+# List SQL instances in cluster
+    Get-RubrikSQLInstance | select name,id,version
 
 
 
