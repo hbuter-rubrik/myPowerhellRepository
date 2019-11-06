@@ -1,5 +1,6 @@
-﻿#install Rubrik Module
+﻿#install & Import Rubrik Module
     Install-Module Rubrik
+    Import-Module Rubrik
 
 # set parameters
     $RubrikCluster="emea1-rbk01.rubrikdemo.com"
@@ -15,7 +16,11 @@
 
 # livemount database
     $db=Get-RubrikDatabase -HostName $dbHost -Instance MSSQLSERVER -Database $dbName
-    New-RubrikDatabaseMount -id $db.id -targetInstanceId $db.instanceId -mountedDatabaseName 'SQL_LM' -recoveryDateTime (Get-date (Get-RubrikDatabase -id $db.id).latestRecoveryPoint)
+    New-RubrikDatabaseMount -id $db.id -targetInstanceId $db.instanceId -mountedDatabaseName 'PSDEMO_SQL_LM' -recoveryDateTime (Get-date (Get-RubrikDatabase -id $db.id).latestRecoveryPoint)
+
+#Unmount livemount database
+    $lmdb=get-rubrikdatabasemount -MountedDatabaseName "PSDEMO_SQL_LM" 
+    Remove-RubrikDatabaseMount -id $lmdb.id
 
 
 # list SQL databases in cluster
