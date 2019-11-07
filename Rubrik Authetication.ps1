@@ -4,7 +4,7 @@ import-module Rubrik
 
 # set parameters
 $RubrikCluster="emea1-rbk01.rubrikdemo.com"
-#path windows machine
+#Path windows machine
 $Credxmlpath = "C:\Users\harold.buter\rubrik.cred"
 
 $CredXML = Import-Clixml $Credxmlpath
