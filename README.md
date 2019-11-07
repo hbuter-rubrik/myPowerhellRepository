@@ -8,6 +8,6 @@ Rubrik Authentication -
 script to login into rubrik cluster using authentication file 
 
 Rubrik SQL -
-v1 - live mount latest recovery point to SQL server
+v1 - live mount & unmount latest recovery point to SQL server
 
 
