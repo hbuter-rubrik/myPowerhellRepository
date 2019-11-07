@@ -8,7 +8,7 @@
     $dbName="AdventureWorks2016"
 
 # get credentials from saved encrypted xml file
-    $Credxmlpath = "/Users/hbuter/rubrik.cred"
+    $Credxmlpath = "C:\Users\harold.buter\Documents\rubrik.cred"
     $CredXML = Import-Clixml $Credxmlpath
 
 # connect to cluster
