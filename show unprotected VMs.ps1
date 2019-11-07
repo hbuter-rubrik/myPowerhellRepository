@@ -4,9 +4,9 @@
 
 # set parameters
 $RubrikCluster="emea1-rbk01.rubrikdemo.com"
-$Credxmlpath = "C:\Users\harold.buter\Documents\rubrik.cred"
+$Credxmlpath = "/Users/hbuter/rubrik.cred"
 $CredXML = Import-Clixml $Credxmlpath
-$OutPath = "C:\Users\harold.buter\Documents\output.csv"
+#$OutPath = "C:\Users\harold.buter\Documents\output.csv"
 
 # connect to cluster
 Connect-Rubrik -Server $RubrikCluster -Credential $CredXML
@@ -15,6 +15,6 @@ Connect-Rubrik -Server $RubrikCluster -Credential $CredXML
 $RubrikVMs=Get-RubrikVM
 $UnprotectedVMs=$RubrikVMs | Where-Object{$_.effectiveSlaDomainName -eq "Unprotected"}
 # write output into CSV file
-$UnprotectedVMs | Sort-Object Name | Select Name,ID | Export-Csv -Path "C:\Users\harold.buter\Documents\output.csv" -NoTypeInformation
+$UnprotectedVMs | Sort-Object Name | Select Name,ID | Export-Csv -Path "/Users/hbuter/Rubrik-unprotected-output.csv" -NoTypeInformation
 #Show ouput on screen
 $UnprotectedVMs | Sort-Object Name | Select Name,ID
