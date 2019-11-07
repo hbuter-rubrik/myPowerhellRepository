@@ -18,6 +18,9 @@
     $db=Get-RubrikDatabase -HostName $dbHost -Instance MSSQLSERVER -Database $dbName
     New-RubrikDatabaseMount -id $db.id -targetInstanceId $db.instanceId -mountedDatabaseName 'PSDEMO_SQL_LM' -recoveryDateTime (Get-date (Get-RubrikDatabase -id $db.id).latestRecoveryPoint)
 
+# show livemount of database
+get-rubrikdatabasemount -MountedDatabaseName "PSDEMO_SQL_LM"
+    
 #Unmount livemount database
     $lmdb=get-rubrikdatabasemount -MountedDatabaseName "PSDEMO_SQL_LM" 
     Remove-RubrikDatabaseMount -id $lmdb.id
