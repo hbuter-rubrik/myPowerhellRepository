@@ -6,7 +6,7 @@
 $RubrikCluster="emea1-rbk01.rubrikdemo.com"
 $Credxmlpath = "C:\Users\harold.buter\Documents\rubrik.cred"
 $CredXML = Import-Clixml $Credxmlpath
-$OutPath = "C:\Users\harold.buter\Documents\output.csv"
+$OutPath = "/Users/hbuter/rubrik.cred"
 
 # connect to cluster
 Connect-Rubrik -Server $RubrikCluster -Credential $CredXML
