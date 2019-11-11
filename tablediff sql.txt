@@ -1,3 +1,0 @@
-CD "Program Files\Microsoft SQL Server\130\COM"
-
-Tablediff.exe -sourceserver localhost -sourcedatabase AdventureWorks2016 -sourceschema Sales -sourcetable SalesPersonQuotaHistory -destinationserver localhost -destinationdatabase SQL_LM -destinationschema Sales -destinationtable SalesPersonQuotaHistory -q
