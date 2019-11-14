@@ -1,15 +1,13 @@
-#install & Import Rubrik Module
-Install-Module Rubrik
+#Import Rubrik Module
 Import-Module Rubrik
 
 # set parameters
 $RubrikCluster="emea1-rbk01.rubrikdemo.com"
 $VM="em1-harobute-l1"
-
-
+$SLA="4hr-30d-AWS"
+$Credxmlpath = "/Users/hbuter/rubrik.cred"
 
 # get credentials from saved encrypted xml file
-$Credxmlpath = "/Users/hbuter/rubrik.cred"
 $CredXML = Import-Clixml $Credxmlpath
 
 # connect to cluster
@@ -28,6 +26,5 @@ $RubrikVMID=$RubrikVMs | where{$_.name -eq"$VM"}|select -ExpandProperty id
 $RubrikVMID
 
 # create snapshot for my VM
-$SLA="4hr-30d-AWS"
 New-RubrikSnapshot -id $RubrikVMID -SLA "$SLA" -Confirm:$false
 

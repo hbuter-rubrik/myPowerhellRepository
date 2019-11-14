@@ -1,5 +1,4 @@
-#install & Import Rubrik Module
-Install-Module Rubrik
+#Import Rubrik Module
 Import-Module Rubrik
 
 # set parameters
