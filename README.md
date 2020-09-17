@@ -27,3 +27,8 @@ Forward_SQL_DBCC.ps1 performs a SQL livemount, wait until it is running and will
 
 createCredentials - 
 Create encrypted credential files for Rubrik, Vmware and GuestOS, which can be used in the scripts to authenticate without displaying passwords
+
+RubrikVolume_Livemount.ps1 - 
+Mount a volume from RBS based backup (physcial or physical) to physical server (or virtual server) adn made visible under the target server c:\Rubrik-mounts\ 
+
+
