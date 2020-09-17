@@ -20,3 +20,10 @@ v1 - Live mount & show & unmount latest recovery point from VM defined in parame
 Rubrik unprotected -
 show all machines / servers that are not part of a SLA domain and export it to screen or CSV file
 
+Forward & Forward SQL - 
+These are scripts used for the Forward presentations. Forward.ps1 are basic rubrik sdk command examples.
+Forward_SQL_DBCC.ps1 performs a SQL livemount, wait until it is running and will run a SQL DBCC check. once done the livemount will be removed again.
+(Note: Thanks to Josh Stenhouse for parts of this script (to connect to SQL and run a query) )
+
+createCredentials - 
+Create encrypted credential files for Rubrik, Vmware and GuestOS, which can be used in the scripts to authenticate without displaying passwords
