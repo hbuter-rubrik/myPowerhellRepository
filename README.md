@@ -39,13 +39,13 @@ Common use cases for this is to detect SQL VMs where the database VMDKs have not
 <ul>
 <li><b>EXAMPLE</b>
 
-C:\>.\VMDK_Size_Audit.ps1 -cluster 10.180.23.53 -VMDK_Size 120000000000 -SLA "Bronze"
+<code>C:\>.\VMDK_Size_Audit.ps1 -cluster 10.180.23.53 -VMDK_Size 120000000000 -SLA "Bronze"</code>
 
 This will generate a CSV that provides a breakdown of all VMs with protected VMDKs that are members of the Bronze SLA and have a VMDK size greater than 120GB </li>
 
 <li><b>EXAMPLE</b>
 
-C:\>.\VMDK_Size_Audit.ps1 -cluster 10.180.23.53 -Exclude_VMDKs -CSV D:\Rubrik\VMDK_Exclusion_report.csv
+<code>C:\>.\VMDK_Size_Audit.ps1 -cluster 10.180.23.53 -Exclude_VMDKs -CSV D:\Rubrik\VMDK_Exclusion_report.csv</code>
 
 This will exclude all VMDKs named in the CSV file. </li>
 </ul>
