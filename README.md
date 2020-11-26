@@ -32,19 +32,20 @@ Create encrypted credential files for Rubrik, Vmware and GuestOS, which can be u
 Mount a volume from RBS based backup (physcial or physical) to physical server (or virtual server) adn made visible under the target server c:\Rubrik-mounts\ 
 
 <b>VMDK_Size_Audit.ps1 </b> -
-Script from Marcus Henderson @ Rubrik amended to change for v5.2
+Script from Marcus Henderson @ Rubrik amended to change for v5.2.
 Script to find VMDK and Exclude disks in VMware
 It will drop the VMs into a CSV file in the event it detects protected VMDKs that are larger than the specified size.  
 Common use cases for this is to detect SQL VMs where the database VMDKs have not yet been excluded. 
-
-<b>EXAMPLE</b>
+<ul>
+<li><b>EXAMPLE</b>
 
 C:\>.\VMDK_Size_Audit.ps1 -cluster 10.180.23.53 -VMDK_Size 120000000000 -SLA "Bronze"
 
-This will generate a CSV that provides a breakdown of all VMs with protected VMDKs that are members of the Bronze SLA and have a VMDK size greater than 120GB 
+This will generate a CSV that provides a breakdown of all VMs with protected VMDKs that are members of the Bronze SLA and have a VMDK size greater than 120GB </li>
 
-<b>EXAMPLE</b>
+<li><b>EXAMPLE</b>
 
 C:\>.\VMDK_Size_Audit.ps1 -cluster 10.180.23.53 -Exclude_VMDKs -CSV D:\Rubrik\VMDK_Exclusion_report.csv
 
-This will exclude all VMDKs named in the CSV file. 
+This will exclude all VMDKs named in the CSV file. </li>
+</ul>
