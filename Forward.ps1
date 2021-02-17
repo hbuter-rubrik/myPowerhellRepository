@@ -1,6 +1,9 @@
 ﻿# Find lates module in PSgallery
 Find-Module Rubrik 
 
+# What modules are installed
+Get-Module -ListAvailable -Name Rubrik
+
 #Install Module
 Install-Module Rubrik 
 
@@ -8,20 +11,20 @@ Install-Module Rubrik
 import-module Rubrik
 
 # set variable for my rubrik cluster (can also be IP address)
-$RubrikCluster="edge.vdutchy.lab"
+$RubrikCluster="emea1-rbk01.rubrikdemo.com"
 
 # get credentials from saved encrypted xml file
-$Credxmlpath = "C:\rubrikCreds.xml"
+$Credxmlpath = "/Users/hbuter/rubrik.cred"
 $CredXML = Import-Clixml $Credxmlpath
 
 # connect to cluster
 Connect-Rubrik -Server $RubrikCluster -Credential $CredXML
 
 #get SLA information
-Get-RubrikSLA Forward 
+Get-RubrikSLA 12hr-30d-AWS 
 
 #Get more detailed info of SLA
-Get-RubrikSLA Forward | select *
+Get-RubrikSLA 12hr-30d-AWS | select *
 
 #Change hourly retention number of days from 1 day to 21 days in verbose mode
 Get-RubrikSLA Forward  | Set-RubrikSLA -HourlyRetention 21 -Verbose
