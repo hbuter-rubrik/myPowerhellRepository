@@ -1,6 +1,6 @@
 ﻿#install & Import Rubrik Module
     #Install-Module Rubrik
-    Import-Module Rubrik
+    Import-Module Rubrik -RequiredVersion 5.3.0 
 
 # set parameters
     $RubrikCluster="emea1-rbk01.rubrikdemo.com"
@@ -20,11 +20,15 @@
 # Set db parameter
     $db=Get-RubrikDatabase -HostName $dbHost -Instance $dbInstance -Database $dbName
 
-# Database ID 
+# get id from SLA domain so we can run the a backup using SLAID
+    $sla=Get-RubrikSLA -Name $dbSla -PrimaryClusterId local
+    
+# check ID's
     Write-Output $db.id
+    #Write-Output $sla.id
 
 # On demand backup
-    New-RubrikSnapshot -id $db.id -SLA $dbSla -Confirm:$false
+    New-RubrikSnapshot -id $db.id -slaid $sla.id 
 
 # livemount database
     New-RubrikDatabaseMount -id $db.id -targetInstanceId $db.instanceId -mountedDatabaseName $livemountName -recoveryDateTime (Get-date (Get-RubrikDatabase -id $db.id).latestRecoveryPoint)
