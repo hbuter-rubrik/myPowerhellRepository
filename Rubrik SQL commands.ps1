@@ -1,6 +1,6 @@
 ﻿#install & Import Rubrik Module
     #Install-Module Rubrik
-    Import-Module Rubrik -RequiredVersion 5.3.0 
+    Import-Module Rubrik -RequiredVersion 5.3.0 brew 
 
 # set parameters
     $RubrikCluster="emea1-rbk01.rubrikdemo.com"
