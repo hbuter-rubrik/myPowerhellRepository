@@ -22,6 +22,7 @@
 
 # Get a snapshot from yesterday that will be used for Livemount
     $recoverDate=Get-RubrikSnapshot -id $db.id -Date (get-date).AddDays(-1)
+    $recoveryDateTime = Get-RubrikDatabaseRecoveryPoint -id $db.id -RestoreTime 
 
 # livemount database using a snapshot created yesterday 
     New-RubrikDatabaseMount -id $db.id -targetInstanceId $db.instanceId -mountedDatabaseName $livemountName -recoveryDateTime $recoverDate.date

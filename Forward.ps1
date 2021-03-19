@@ -4,8 +4,12 @@ Find-Module Rubrik
 # What modules are installed
 Get-Module -ListAvailable -Name Rubrik
 
+
 #Install Module
 Install-Module Rubrik 
+#Install RC versions of the SDK 
+Install-Module Rubrik -Force -AllowPrerelease
+#  example import using RC version.. Import-Module Rubrik -RequiredVersion 5.3.0 
 
 #use module
 import-module Rubrik
@@ -59,8 +63,12 @@ Get-Command -module Rubrik
 #search on specific function for example sla
 Get-Command -module Rubrik *sla*
 
+# Managed Volumes
+#get info on a MV
+Get-RubrikManagedVolume -name PhilD-SQLMV3
 
-
+#Get info all non relic MV
+Get-RubrikManagedVolume -Relic:$false  
 
 
 
