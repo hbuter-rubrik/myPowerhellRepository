@@ -11,8 +11,11 @@ script to login into rubrik cluster using authentication file on a windows based
 <b>Rubrik Authentication 4 Mac </b>- 
 script to login into rubrik cluster using authentication file on a MAC laptop
 
-<b>Rubrik SQL commandd </b>-
-v1 - live mount & Show & unmount latest recovery point to SQL server
+<b>Rubrik SQL scripts</b>-
+1) SQL Commands - live mount & Show & unmount latest recovery point to SQL server
+2) SQL Recovery - Live mount database
+3) SQL Export PIT - Export a SQL point in Time recovery point to a SQL server
+4) SQL Ondemand - Make an on-demand snapshot of a SQL database
 
 <b>Rubrik VMware </b>- 
 v1 - Live mount & show & unmount latest recovery point from VM defined in parameters
@@ -30,6 +33,12 @@ Create encrypted credential files for Rubrik, Vmware and GuestOS, which can be u
 
 <b>RubrikVolume_Livemount.ps1 </b>- 
 Mount a volume from RBS based backup (physcial or physical) to physical server (or virtual server) adn made visible under the target server c:\Rubrik-mounts\ 
+
+<b>Add_VM_to_CustomeRole </b>- 
+With script you can add VM into a custom role and specify the priveleges
+
+<b>Legalhold_snappable </b>- 
+Add a VM snappable into legalhold
 
 <b>VMDK_Size_Audit.ps1 </b> -
 Script from Marcus Henderson @ Rubrik amended to change for v5.2.
